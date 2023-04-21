@@ -21,7 +21,8 @@ public class SecurityConfig {
                 .antMatchers("/", "/user/**", "/image/**", "subscribe/**", "/comment/**").authenticated() // 해당 주소는 인증이 필요함
                 .anyRequest().permitAll())
                 .formLogin(login -> login
-                .loginPage("/auth/signin") // Get
+                .loginPage("/auth/signin") // GET
+                .loginProcessingUrl("/auth/signin") // POST -> 스프링 시큐리티가 로그인 프로세스 진행
                 .defaultSuccessUrl("/")); 
 		return http.build(); 
 	}

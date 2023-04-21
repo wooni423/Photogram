@@ -21,7 +21,7 @@ spring:
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: create # update:데이터 저장 유지 create : 데이터 저장 안됨
+      ddl-auto: update # update:데이터 저장 유지 create : 데이터 저장 안됨
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
