@@ -50,7 +50,7 @@ public class AuthController {
 				errorMap.put(error.getField(),error.getDefaultMessage());		
 			}
 			throw new CustomValidationException("유효성 검사 실패함",errorMap);
-		}else {
+		} else {
 			// signUpDTO -> User
 			User user=signupDto.toEntity();
 			
