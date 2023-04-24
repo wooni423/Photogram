@@ -12,10 +12,15 @@ function update(userId,event) {
 		data:data,
 		contentType:"application/x-www-form-urlencoded; charset=utf-8",
 		dataType:"json"
-	}).done(res  =>{ // HttpStatus 상태코드 200번대
+	}).done(res =>{ // HttpStatus 상태코드 200번대
+		
 		console.log("성공",res);
 		//location.href=`/user/${userId}`;
-	}).fail(error=>{ // HttpStatus 상태코드 200번대가 아닐때	
+	}).fail(error=>{ // HttpStatus 상태코드 200번대가 아닐때
+		if(error.data==null){
+			alert(error.responseJSON.message);
+		}	
+		console.log(error);
 		alert(JSON.stringify(error.responseJSON.data));
 	});
 	
